@@ -1,7 +1,7 @@
 import Navbar from "./components/Navbar";
 import Paralax from "./components/Paralax";
 
-import firstImage from "./assets/bg-1.jpeg";
+import firstImage from "./assets/bg-2.jpeg";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 

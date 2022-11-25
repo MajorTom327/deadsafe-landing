@@ -7,12 +7,11 @@ const chroma = require('chroma-js');
 ;
 
 const colors = {
-  primary: "#345511",
+  primary: "#17273b",
   secondary: "#5C0029",
   base: "#274060",
   light: "#f1faee",
-  dark: "#14213d",
-
+  dark: "#192909",
 }
 
 const colorModifier = {
