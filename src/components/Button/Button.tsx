@@ -3,6 +3,7 @@ import classnames from "classnames";
 
 type Props = {
   children: React.ReactNode;
+  variant?: "ghost" | "filled" | "outline";
   to?: string;
   onClick?: () => void;
   className?: string;
@@ -10,6 +11,7 @@ type Props = {
 
 export const Button: React.FC<Props> = ({
   children,
+  variant,
   to,
   onClick,
   className,
@@ -19,7 +21,8 @@ export const Button: React.FC<Props> = ({
     "px-4 py-2",
     {
       "text-primary-content bg-primary hover:bg-primary-focus hover:text-white":
-        true,
+        variant === "filled",
+      "hover:bg-white/80 hover:text-base-color ": variant === "ghost",
     },
     className
   );
@@ -38,6 +41,8 @@ export const Button: React.FC<Props> = ({
   );
 };
 
-Button.defaultProps = {};
+Button.defaultProps = {
+  variant: "filled",
+};
 
 export default Button;
