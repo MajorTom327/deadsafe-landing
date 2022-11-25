@@ -7,7 +7,7 @@ type Props = {
 export const Card: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <div className="drop-shadow-lg overflow-hidden rounded-lg border border-dark my-auto bg-dark/50">
+      <div className="drop-shadow-lg overflow-hidden rounded-lg border border-dark my-auto bg-dark/30">
         <div className="px-4 py-5 sm:px-6">{children}</div>
       </div>
     </>

@@ -7,15 +7,15 @@ export const Footer: React.FC<Props> = ({}) => {
   return (
     <>
       <div className="bg-primary my-0">
-        <Container className="py-12 flex flex-col justify-evenly w-full gap-3">
+        <Container className="pt-24 pb-12 flex flex-col justify-evenly w-full gap-3">
           <div className="flex gap-8 justify-center w-full">
-            <a href="#" className="hover:font-semibold hover:underline">
+            <a href="#" className="hover:underline">
               Facebook
             </a>
-            <a href="#" className="hover:font-semibold hover:underline">
+            <a href="#" className="hover:underline">
               Twitter
             </a>
-            <a href="#" className="hover:font-semibold hover:underline">
+            <a href="#" className="hover:underline">
               Discord
             </a>
           </div>
