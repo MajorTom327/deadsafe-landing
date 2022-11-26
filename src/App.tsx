@@ -7,6 +7,8 @@ import SafeImage from "./assets/safe.jpeg";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Features from "./components/Features";
+import Button from "./components/Button";
+import socials from "./refs/socials";
 
 function App() {
   return (
@@ -19,6 +21,11 @@ function App() {
           </div>
           <div className="bg-dark/30 text-4xl p-4 group-hover:bg-dark/70 transition w-full text-center">
             The Vault is waiting.
+          </div>
+          <div className="flex justify-center pt-16">
+            <Button className="text-2xl mx-4" to={socials.discordLink}>
+              Join the Discord Server
+            </Button>
           </div>
         </div>
       </Paralax>

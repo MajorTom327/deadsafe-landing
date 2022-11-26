@@ -7,7 +7,7 @@ type Props = {
 };
 
 export const Container: React.FC<Props> = ({ children, className }) => {
-  const classes = classnames(className, "container mx-auto");
+  const classes = classnames(className, "container p-6 md:p-auto mx-auto");
   return <div className={classes}>{children}</div>;
 };
 

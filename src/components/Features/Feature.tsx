@@ -13,7 +13,7 @@ type Props = {
 export const Feature: React.FC<Props> = ({ feature }) => {
   return (
     <>
-      <div className="grid grid-cols-2 py-2 items-center group">
+      <div className="grid md:grid-cols-2 py-2 items-center group">
         <div className="flex flex-col">
           <div className="text-2xl font-semibold text-center group-hover:animate-bounce">
             {feature.title}

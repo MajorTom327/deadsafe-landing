@@ -22,7 +22,7 @@ export const Button: React.FC<Props> = ({
   disabled,
 }) => {
   const classes = classnames(
-    "transition duration-300 ease-in-out font-semibold rounded relative",
+    "transition duration-300 ease-in-out font-semibold rounded relative text-center",
     "px-4 py-2",
     {
       "text-primary-content bg-primary hover:bg-primary-focus hover:text-white":

@@ -10,10 +10,10 @@ type Props = {};
 export const Hero: React.FC<Props> = ({}) => {
   return (
     <>
-      <Container className="h-96">
+      <Container className=" py-16">
         <Title id="safe">The safe</Title>
-        <div className="grid grid-cols-3">
-          <div className="col-span-2 my-16">
+        <div className="grid md:grid-cols-3">
+          <div className="md:col-span-2 my-16">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
               DeadSafe
             </h1>
