@@ -38,7 +38,7 @@ export const Features: React.FC<Props> = ({}) => {
     <>
       <Container className="py-8">
         <div className="flex flex-col gap-4">
-          <Title id="features">The Deadly Core Features</Title>
+          <Title id="features">The Deadly Features</Title>
 
           {features.map((feature, index) => (
             <Feature

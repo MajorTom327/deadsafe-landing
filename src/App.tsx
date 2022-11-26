@@ -25,13 +25,14 @@ function App() {
       <Hero />
       <Paralax img={SeparatorImage} />
       <Features />
-      <Paralax img={SafeImage} className="h-[32rem]">
-        <div className="flex flex-col justify-center items-center gap-4 h-full group">
-          <div className="flex flex-col gap-4 text-4xl bg-dark/40 p-4 group-hover:bg-dark/75 text-center w-full mt-16">
+      <Paralax img={SafeImage} className="h-[32rem] relative group z-10">
+        <div className="flex flex-col justify-center items-center gap-4 h-full ">
+          <div className=" z-30 flex flex-col gap-4 text-4xl bg-dark/40 p-4 group-hover:bg-dark/75 text-center w-full mt-16">
             <div>Keep your keys safe.</div>
             <div>Stay alive</div>
           </div>
         </div>
+        <div className="z-20 mix-blend-multiply absolute top-0 right-0 bottom-0 left-0 bg-dark/70"></div>
       </Paralax>
       <Footer />
     </div>
