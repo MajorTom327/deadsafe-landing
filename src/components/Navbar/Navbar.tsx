@@ -1,4 +1,5 @@
 import React from "react";
+import { necronomiconLink } from "../../refs/socials";
 import Button from "../Button";
 import Container from "../Container/Container";
 import Popover from "../Popover/Popover";
@@ -19,7 +20,7 @@ export const Navbar: React.FC<Props> = ({}) => {
               Features
             </Button>
             <Popover title="The Bible of the project">
-              <Button disabled to="#">
+              <Button disabled to={necronomiconLink}>
                 Necronomicon
               </Button>
             </Popover>
