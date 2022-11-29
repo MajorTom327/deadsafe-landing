@@ -81,6 +81,7 @@ jobs:
 
   publish:
     name: 🚀 Publish
+    environment: Production
     if: ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name == 'push' }}
     runs-on: ubuntu-latest
     needs: [docker]
@@ -99,9 +100,9 @@ jobs:
       - name: Configure SSH
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ environment.SSH_PRIVATE_KEY }}
           name: id_ed25519
-          known_hosts: ${{ secrets.SSH_HOST }}
+          known_hosts: ${{ environment.SSH_HOST }}
           config: |
             Host styx
               HostName styx-sys.com
