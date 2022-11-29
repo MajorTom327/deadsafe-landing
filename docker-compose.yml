@@ -1,12 +1,12 @@
-version: "3.7"
+version: "3.3"
 services:
   the-deadsafe:
-    image: the-deadsafe:latest
-    context:
+    image: ghcr.io/majortom327/deadsafe-landing:main
+    build:
       dockerfile: Dockerfile
       context: .
     restart: always
     environment:
       - NODE_ENV=production
     ports:
-      - "127.0.0.1:4000:3000"
+      - "4000:3000"

@@ -85,6 +85,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [docker]
     steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+      - run: pnpm install
+      - run: pnpm run build
       - name: Configure SSH
         uses: shimataro/ssh-key-action@v2
         with:
@@ -98,5 +109,11 @@ jobs:
               Port 2200
               IdentityFile ~/.ssh/id_ed25519
           if_key_exists: fail
+      - name: Copy files
+        run: |
+          rsync -azr ./build styx:/home/deadsafe/www/base
+          rsync -azr ./public styx:/home/deadsafe/www/base
+          rsync -azr ./server.js styx:/home/deadsafe/www/base
+
       - name: Update remote stack
-        run: ssh styx "./bin/docker-login.sh ; cd /home/deadsafe/www/base && docker-compose pull && docker-compose up -d"
+        run: ssh styx "cd /home/deadsafe/www/base && pm2 restart ecosystem.config.js"
