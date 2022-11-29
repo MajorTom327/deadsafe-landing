@@ -99,9 +99,9 @@ jobs:
       - name: Configure SSH
         uses: shimataro/ssh-key-action@v2
         with:
-          key: ${{ environment.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           name: id_ed25519
-          known_hosts: ${{ environment.SSH_HOST }}
+          known_hosts: ${{ secrets.SSH_HOST }}
           config: |
             Host styx
               HostName styx-sys.com
