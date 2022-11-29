@@ -113,7 +113,7 @@ jobs:
         run: |
           rsync -azr ./build styx:/home/deadsafe/www/base/build
           rsync -azr ./public styx:/home/deadsafe/www/base/public
-          rsync -azr ./server.js styx:/home/deadsafe/www/base/server.js
+          rsync ./server.js styx:/home/deadsafe/www/base/server.js
 
       - name: Update remote stack
-        run: ssh styx "cd /home/deadsafe/www/base && pm2 restart ecosystem.config.js"
+        run: ssh styx "cd /home/deadsafe/www/base && yarn install && pm2 restart ./ecosystem.config.js"
