@@ -2,10 +2,6 @@
 
 const chroma = require('chroma-js');
 
-;
-;
-;
-
 const colors = {
   primary: "#17273b",
   secondary: "#5C0029",
@@ -27,7 +23,7 @@ const getContentColor = (color) =>
 module.exports = {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
