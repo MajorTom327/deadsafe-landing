@@ -27,14 +27,14 @@ export const Hero: React.FC<Props> = ({}) => {
             </p>
           </div>
 
-          <Card>
+          {/* <Card>
             <div className="flex flex-col gap-1 text-center">
               <div className="text-xl text-gray-300">Current Vault Value:</div>
               <div className="text-3xl font-bold text-gray-200">
                 <MoneyFormat value={0} />
               </div>
             </div>
-          </Card>
+          </Card> */}
         </div>
       </Container>
     </>
