@@ -99,4 +99,4 @@ jobs:
               IdentityFile ~/.ssh/id_ed25519
           if_key_exists: fail
       - name: Update remote stack
-        run: ssh styx "cd /home/deadsafe/www/base && docker-compose pull && docker-compose up -d"
+        run: ssh styx "./bin/docker-login.sh ; cd /home/deadsafe/www/base && docker-compose pull && docker-compose up -d"
