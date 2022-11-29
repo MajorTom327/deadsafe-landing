@@ -37,7 +37,19 @@ export const Button: React.FC<Props> = ({
     className
   );
 
+  const isAbsolute = to?.startsWith("http");
+
+
+
   if (to && !disabled) {
+    if (isAbsolute) {
+      return (
+        <a href={to} className={classes}>
+          {children}
+          {ping && <Ping />}
+        </a>
+      );
+    }
     return (
       <Link prefetch="intent" to={to} className={classes}>
         {children}
