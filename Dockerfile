@@ -34,12 +34,12 @@ RUN npm run build
 # Finally, build the production image with minimal footprint
 FROM base
 
-WORKDIR /myapp
+WORKDIR /app
 
-COPY --from=production-deps /myapp/node_modules /myapp/node_modules
+COPY --from=production-deps /myapp/node_modules /app/node_modules
 
-COPY --from=build /myapp/build /myapp/build
-COPY --from=build /myapp/public /myapp/public
+COPY --from=build /myapp/build /app/build
+COPY --from=build /myapp/public /app/public
 ADD . .
 
 CMD ["npm", "start"]
