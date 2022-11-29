@@ -9,6 +9,15 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+permissions:
+  actions: write
+  contents: read
+  packages: write
+
 jobs:
   build:
     name: 🛠 Build
