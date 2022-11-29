@@ -78,3 +78,28 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             COMMIT_SHA=${{ github.sha }}
+
+  publish:
+    name: 🚀 Publish
+    if: ${{ (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev') && github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    needs: [docker]
+    steps:
+      - name: Configure SSH
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          name: id_ed25519
+          known_hosts: ${{ secrets.SSH_HOST }}
+          config: |
+            Host styx
+              HostName styx-sys.com
+              User root
+              Port 2200
+              IdentityFile ~/.ssh/id_ed25519
+          if_key_exists: fail
+      - name: Update remote stack
+        run: ssh styx "cd ~deadsafe/www/base &&\
+          docker login docker.pkg.github.com -u majortom327 -p ${{ secrets.GITHUB_TOKEN }} &&\
+          docker-compose pull &&\
+          docker-compose up -d"
