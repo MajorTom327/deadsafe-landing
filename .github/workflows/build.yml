@@ -111,9 +111,9 @@ jobs:
           if_key_exists: fail
       - name: Copy files
         run: |
-          rsync -azr ./build styx:/home/deadsafe/www/base/build
-          rsync -azr ./public styx:/home/deadsafe/www/base/public
-          rsync ./server.js styx:/home/deadsafe/www/base/server.js
+          rsync -azur ./build styx:/home/deadsafe/www/base
+          rsync -azur ./public styx:/home/deadsafe/www/base
+          rsync -azu ./server.js styx:/home/deadsafe/www/base
 
       - name: Update remote stack
         run: ssh styx "cd /home/deadsafe/www/base && yarn install && pm2 restart ./ecosystem.config.js"

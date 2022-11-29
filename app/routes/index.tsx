@@ -1,5 +1,4 @@
 import Button from "~/components/Button";
-import Hero from "~/components/Hero";
 import Paralax from "~/components/Paralax";
 import socials from "~/refs/socials";
 
