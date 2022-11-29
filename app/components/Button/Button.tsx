@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import Ping from "../Ping";
+import { Link } from "@remix-run/react";
 
 type Props = {
   children: React.ReactNode;
@@ -38,10 +39,10 @@ export const Button: React.FC<Props> = ({
 
   if (to && !disabled) {
     return (
-      <a href={to} className={classes}>
+      <Link prefetch="intent" to={to} className={classes}>
         {children}
         {ping && <Ping />}
-      </a>
+      </Link>
     );
   }
   return (
