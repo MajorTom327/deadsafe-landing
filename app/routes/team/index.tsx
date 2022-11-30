@@ -37,12 +37,12 @@ export const Index: React.FC<Props> = ({}) => {
       {teamMembers.map((member: TeamMember) => (
 
       <Card key={member.name} className="bg-primary/80 rounded-2xl">
-        <div className='grid grid-cols-2'>
+        <div className='grid md:grid-cols-2'>
           <div className='flex justify-center items-center'>
             <img
               src={member.image}
               alt={`${member.name}'s avatar`}
-              className="rounded-xl drop-shadow-xl border border-primary w-72 h-72 -mt-16"
+              className="rounded-xl drop-shadow-xl border border-primary w-72 h-72 md:-mt-16"
             />
           </div>
           <div className='flex flex-col gap-4'>
