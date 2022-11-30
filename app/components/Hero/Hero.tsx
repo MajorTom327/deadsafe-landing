@@ -22,7 +22,7 @@ export const Hero: React.FC<Props> = ({}) => {
             </p>
             <p className="mt-6 max-w-3xl text-xl text-gray-300">
               <Button variant="ghost">
-                Crack thecode and get the treasure of the deads.
+                Crack the code and get the treasure of the deads.
               </Button>
             </p>
           </div>
