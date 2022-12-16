@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "~/components/Hero";
 import Paralax from "~/components/Paralax";
 import SafeImage from "~/assets/safe.jpeg";
+import Safe from "~/components/Safe";
 
 type Props = {};
 
@@ -16,7 +17,7 @@ export const Index: React.FC<Props> = ({}) => {
           </div>
         </div>
       </Paralax>
-      <Hero />
+      <Safe />
     </>
   );
 };
