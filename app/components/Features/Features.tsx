@@ -24,13 +24,13 @@ const features: FeatureType[] = [
     icon: <GiPayMoney />,
     title: "Buy somes items NFT to help you and fill the vault",
     description:
-      "During your journey you will need stuff to survive. Buy some items NFT to help you and fill the vault. A large part of the mint value is put into the vault to increase the value of the gains.",
+      "During your journey you will need stuff to survive. Buy some items as NFT to help you and participate to fill the vault the same way. A large part of the mint value for items is put into the vault and increase the value of the gains.",
   },
   {
     icon: <GiModernCity />,
     title: "Explore the city",
     description:
-      "Explore the city, save people and organise the camp, the more you safe people, make the exploration easier to find the keys. Make your team stronger and more efficient to protect from the zombies.",
+      "Explore the city, save people and organise the camp, the more you save people, the more you make the exploration easier to find the keys. Make your team stronger and more efficient to protect your quarantine from the zombies.",
   },
   {
     icon: <GiRaiseZombie />,
