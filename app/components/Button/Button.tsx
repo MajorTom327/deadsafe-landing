@@ -39,8 +39,6 @@ export const Button: React.FC<Props> = ({
 
   const isAbsolute = to?.startsWith("http");
 
-
-
   if (to && !disabled) {
     if (isAbsolute) {
       return (
