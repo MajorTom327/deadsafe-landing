@@ -105,6 +105,7 @@ jobs:
           if_key_exists: fail
       - name: Copy files
         run: |
+          rsync -azu ./package.json styx:/home/deadsafe/www/base
           rsync -azur ./build styx:/home/deadsafe/www/base
           rsync -azur ./public styx:/home/deadsafe/www/base
           rsync -azu ./server.js styx:/home/deadsafe/www/base
