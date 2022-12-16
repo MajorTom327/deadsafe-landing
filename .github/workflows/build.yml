@@ -86,16 +86,13 @@ jobs:
     needs: [docker]
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm run build
+          cache: 'yarn'
+      - run: yarn
+      - run: yarn run build
       - name: Configure SSH
         uses: shimataro/ssh-key-action@v2
         with:
@@ -116,4 +113,4 @@ jobs:
           rsync -azu ./server.js styx:/home/deadsafe/www/base
 
       - name: Update remote stack
-        run: ssh styx "cd /home/deadsafe/www/base && yarn install && pm2 restart ./ecosystem.config.js"
+        run: ssh styx "cd /home/deadsafe/www/base && yarn && pm2 restart ./ecosystem.config.js"
