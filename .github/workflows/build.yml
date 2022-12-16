@@ -97,18 +97,11 @@ jobs:
           name: id_ed25519
           known_hosts: ${{ secrets.SSH_HOST }}
           config: |
-            Host styx
-              HostName styx-sys.com
-              User root
-              Port 2200
+            Host the-deadsafe
+              HostName the-deadsafe.com
+              User vthomas
+              Port 22
               IdentityFile ~/.ssh/id_ed25519
           if_key_exists: fail
       - name: Copy files
-        run: |
-          rsync -azu ./package.json styx:/home/deadsafe/www/base
-          rsync -azur ./build styx:/home/deadsafe/www/base
-          rsync -azur ./public styx:/home/deadsafe/www/base
-          rsync -azu ./server.js styx:/home/deadsafe/www/base
-
-      - name: Update remote stack
-        run: ssh styx "cd /home/deadsafe/www/base && yarn && pm2 restart ./ecosystem.config.js"
+        run: ssh the-deadsafe "docker-compose pull ; docker-compose up -d"
