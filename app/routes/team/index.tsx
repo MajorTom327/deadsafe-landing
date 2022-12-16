@@ -32,8 +32,8 @@ const teamMembers: TeamMember[] = [
 
 export const Index: React.FC<Props> = ({}) => {
   return (<>
-  <Paralax img={background} className="h-[90vh] ">
-    <Container className="flex flex-col gap-4 py-8">
+  <Paralax img={background} className="h-[95vh] ">
+    <Container className="flex flex-col gap-4 py-12">
       {teamMembers.map((member: TeamMember) => (
 
       <Card key={member.name} className="bg-primary/80 rounded-2xl">
