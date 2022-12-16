@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../Card";
 
 type FeatureType = {
+  icon?: React.ReactNode;
   title: string;
   description: string;
 };
@@ -13,14 +14,17 @@ type Props = {
 export const Feature: React.FC<Props> = ({ feature }) => {
   return (
     <>
-      <div className="grid md:grid-cols-2 py-2 items-center group">
-        <div className="flex flex-col">
-          <div className="text-2xl font-semibold text-center group-hover:animate-bounce">
-            {feature.title}
+      <div className="py-2 flex gap-2">
+        {feature.icon && (
+          <div>
+            <div className="rounded-full text-4xl bg-primary p-2">
+              {feature.icon}
+            </div>
           </div>
-        </div>
-        <div className="p-4 bg-dark/5 group-hover:bg-dark/40 transition cursor-pointer rounded-lg group-hover:drop-shadow-lg transform group-hover:-translate-y-1">
-          {feature.description}
+        )}
+        <div className="flex flex-col gap-5">
+          <div className="text-xl font-semibold">{feature.title}</div>
+          <div className="">{feature.description}</div>
         </div>
       </div>
     </>

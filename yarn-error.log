@@ -1,0 +1,72 @@
+Arguments: 
+  /opt/nodejs/17.6.0/bin/node /usr/share/yarn/bin/yarn.js add react-icons
+
+PATH: 
+  /usr/local/rvm/gems/ruby-3.1.2/bin:/usr/local/rvm/gems/ruby-3.1.2@global/bin:/usr/local/rvm/rubies/ruby-3.1.2/bin:/vscode/bin/linux-x64/1ad8d514439d5077d2b0b7ee64d2ce82a9308e5a/bin/remote-cli:/home/codespace/.local/bin:/home/codespace/.dotnet:/home/codespace/.nodejs/current/bin:/home/codespace/.php/current/bin:/home/codespace/.python/current/bin:/home/codespace/.java/current/bin:/home/codespace/.ruby/current/bin:/home/codespace/.local/bin:/usr/local/oryx:/usr/local/go/bin:/go/bin:/usr/local/sdkman/bin:/usr/local/sdkman/candidates/java/current/bin:/usr/local/sdkman/candidates/gradle/current/bin:/usr/local/sdkman/candidates/maven/current/bin:/usr/local/rvm/gems/default/bin:/usr/local/rvm/gems/default@global/bin:/usr/local/rvm/rubies/default/bin:/usr/local/share/rbenv/bin:/opt/conda/bin:/usr/local/php/current/bin:/usr/local/python/current/bin:/usr/local/py-utils/bin:/usr/local/nvs:/usr/local/share/nvm/versions/node/v16.18.1/bin:/usr/local/hugo/bin:/usr/local/dotnet/current:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/codespace/.dotnet/tools:/usr/local/rvm/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  17.6.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/home/codespace/.cache/yarn/v6/npm-eslint-utils-3.0.0-8aebaface7345bb33559db0a1f13a1d2d48c3672-integrity/node_modules/eslint-utils/LICENSE' -> '/workspaces/deadsafe-landing/node_modules/@typescript-eslint/utils/node_modules/eslint-utils/LICENSE'
+
+npm manifest: 
+  {
+    "private": true,
+    "sideEffects": false,
+    "scripts": {
+      "build": "npm run build:css && remix build",
+      "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+      "dev": "remix build && run-p \"dev:*\"",
+      "dev:node": "cross-env NODE_ENV=development nodemon --require dotenv/config ./server.js --watch ./server.js",
+      "dev:remix": "remix watch",
+      "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+      "start": "cross-env NODE_ENV=production node ./server.js"
+    },
+    "dependencies": {
+      "@remix-run/express": "^1.7.6",
+      "@remix-run/node": "^1.7.6",
+      "@remix-run/react": "^1.7.6",
+      "@types/luxon": "^3.1.0",
+      "chroma-js": "^2.4.2",
+      "classnames": "^2.3.2",
+      "compression": "^1.7.4",
+      "cross-env": "^7.0.3",
+      "express": "^4.18.2",
+      "isbot": "^3.6.5",
+      "luxon": "^3.1.1",
+      "morgan": "^1.10.0",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "@remix-run/dev": "^1.7.6",
+      "@remix-run/eslint-config": "^1.7.6",
+      "@types/react": "^18.0.25",
+      "@types/react-dom": "^18.0.8",
+      "autoprefixer": "^10.4.13",
+      "concurrently": "^7.6.0",
+      "dotenv": "^16.0.3",
+      "eslint": "^8.27.0",
+      "nodemon": "^2.0.20",
+      "npm-run-all": "^4.1.5",
+      "postcss": "^8.4.19",
+      "tailwindcss": "^3.2.4",
+      "typescript": "^4.8.4"
+    },
+    "engines": {
+      "node": ">=14"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
