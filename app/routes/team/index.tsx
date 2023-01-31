@@ -3,6 +3,7 @@ import Card from '~/components/Card';
 import Container from '~/components/Container/Container';
 import Paralax from '~/components/Paralax';
 import background from '~/assets/bg-2.jpeg'
+import majortom327Avatar from "~/assets/team/majortom328.jpg";
 
 type Props = {
 };
@@ -18,17 +19,17 @@ export type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "MajorTom327",
-    image: 'https://fr.gravatar.com/userimage/143358375/708f1db20097495533f3a533f4897d15.png?size=200',
+    image: majortom327Avatar,
     description: [
       "MajorTom327 is a developper. His passion is to build tools and stuff that make people happy. He's a Utopian Nerd. He thinks the most interresting things in web3 isn't making a lot of money, but enjoying good projects and make the world a better place. Line of code after line of code.",
       "That's a passionate who want, before anything else, make a good thing",
       "Founder of the project with the motivation to change the life of one player forever and make the Web3 ecosystem less money-centrist to put the user and the community back in the center of the future application.",
-      "So to define him, he truly believe in freedom. He believes the user is important and the power should be in his hands and web3 will make this possible."
+      "So to define him, he truly believe in freedom. He believes the user is important and the power should be in his hands and web3 will make this possible.",
     ],
     citation: "Until now, everything is ok.",
-    twitter: "https://twitter.com/majortom327"
-  }
-]
+    twitter: "https://twitter.com/majortom327",
+  },
+];
 
 export const Index: React.FC<Props> = ({}) => {
   return (<>
