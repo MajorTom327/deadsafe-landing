@@ -98,7 +98,7 @@ jobs:
           known_hosts: ${{ secrets.SSH_HOST }}
           config: |
             Host the-deadsafe
-              HostName the-deadsafe.com
+              HostName 94.237.58.236
               User vthomas
               Port 22
               IdentityFile ~/.ssh/id_ed25519
