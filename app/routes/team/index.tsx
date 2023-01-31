@@ -3,7 +3,7 @@ import Card from '~/components/Card';
 import Container from '~/components/Container/Container';
 import Paralax from '~/components/Paralax';
 import background from '~/assets/bg-2.jpeg'
-import majortom327Avatar from "~/assets/team/majortom328.jpg";
+import majortom327Avatar from "~/assets/team/majortom327.jpg";
 
 type Props = {
 };
