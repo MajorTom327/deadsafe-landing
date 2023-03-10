@@ -23,12 +23,8 @@ export const Navbar: React.FC<Props> = ({}) => {
             <Button ping to="/features">
               Features
             </Button>
-            <Button to="/team">
-              Team
-            </Button>
-            <Button disabled to={necronomiconLink}>
-              Necronomicon
-            </Button>
+            <Button to="/team">Team</Button>
+            <Button to={necronomiconLink}>Necronomicon</Button>
           </div>
         </Container>
       </div>
