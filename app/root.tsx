@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from "@vercel/remix";
 import {
   Links,
   LiveReload,
@@ -9,8 +9,20 @@ import {
 } from "@remix-run/react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import { Analytics } from "@vercel/analytics/react";
+import { json } from "@vercel/remix";
+import { useLoaderData } from "@remix-run/react";
 
 import styles from "./styles/app.css";
+
+type EnvironmentData = {
+  NODE_ENV: string;
+  VERCEL_ANALYTICS_ID: string;
+};
+
+type LoaderData = {
+  ENV: EnvironmentData;
+};
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -37,7 +49,18 @@ export const meta: MetaFunction = () => ({
   "twitter:image": "/social.png",
 });
 
+export const loader = () => {
+  const env = {
+    NODE_ENV: process.env.NODE_ENV,
+    VERCEL_ANALYTICS_ID: process.env.VERCEL_ANALYTICS_ID!,
+  };
+
+  return json<LoaderData>({ ENV: env });
+};
+
 export default function App() {
+  const { ENV } = useLoaderData<LoaderData>();
+
   return (
     <html lang="en">
       <head>
@@ -51,6 +74,13 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+
+        <Analytics />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(ENV)}`,
+          }}
+        />
       </body>
     </html>
   );

@@ -1,7 +1,0 @@
-the-deadsafe.localhost {
-    reverse_proxy the-deadsafe:3000
-}
-
-docs.the-deadsafe.localhost {
-  reverse_proxy docs:80
-}
