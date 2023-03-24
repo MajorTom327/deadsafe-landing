@@ -10,7 +10,7 @@ type ImageOptimizeOptions = Partial<{
 export const getImageUrl = (src: string, options?: ImageOptimizeOptions) => {
   const params = new URLSearchParams({
     url: src,
-    w: propOr(640, "width", options),
+    w: propOr(1200, "width", options),
     q: propOr(75, "quality", options),
   });
 

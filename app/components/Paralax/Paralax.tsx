@@ -18,7 +18,9 @@ export const Paralax: React.FC<Props> = ({ img, className, children }) => {
     <>
       <div
         className={classes}
-        style={{ backgroundImage: `url('${getImageUrl(img)}')` }}
+        style={{
+          backgroundImage: `url('${getImageUrl(img)}')`,
+        }}
       >
         {children}
       </div>
