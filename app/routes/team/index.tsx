@@ -4,6 +4,7 @@ import Container from '~/components/Container/Container';
 import Paralax from '~/components/Paralax';
 import background from '~/assets/bg-2.jpeg'
 import majortom327Avatar from "~/assets/team/majortom327.jpg";
+import getImageUrl from "~/lib/getImageUrl";
 
 type Props = {
 };
@@ -32,52 +33,50 @@ const teamMembers: TeamMember[] = [
 ];
 
 export const Index: React.FC<Props> = ({}) => {
-  return (<>
-  <Paralax img={background} className="h-[95vh] ">
-    <Container className="flex flex-col gap-4 py-12">
-      {teamMembers.map((member: TeamMember) => (
+  return (
+    <>
+      <Paralax img={background} className="h-[95vh] ">
+        <Container className="flex flex-col gap-4 py-12">
+          {teamMembers.map((member: TeamMember) => (
+            <Card key={member.name} className="bg-primary/80 rounded-2xl">
+              <div className="grid md:grid-cols-2">
+                <div className="flex justify-center items-center">
+                  <img
+                    src={getImageUrl(member.image, { width: 750 })}
+                    alt={`${member.name}'s avatar`}
+                    className="rounded-xl drop-shadow-xl border border-primary w-72 h-72 md:-mt-16"
+                  />
+                </div>
+                <div className="flex flex-col gap-4">
+                  <h1 className="text-5xl font-semibold text-center">
+                    {member.name}
+                  </h1>
+                  <div className="flex flex-col gap-4">
+                    {member.description.map((line) => (
+                      <p key="line" className="text-xl">
+                        {line}
+                      </p>
+                    ))}
+                  </div>
 
-      <Card key={member.name} className="bg-primary/80 rounded-2xl">
-        <div className='grid md:grid-cols-2'>
-          <div className='flex justify-center items-center'>
-            <img
-              src={member.image}
-              alt={`${member.name}'s avatar`}
-              className="rounded-xl drop-shadow-xl border border-primary w-72 h-72 md:-mt-16"
-            />
-          </div>
-          <div className='flex flex-col gap-4'>
-            <h1 className='text-5xl font-semibold text-center'>{member.name}</h1>
-            <div className="flex flex-col gap-4">
-
-              {member.description.map((line) => (
-                <p key="line" className='text-xl'>
-                  {line}
-                </p>
-              ))}
-            </div>
-
-
-            <div className="flex flex-col gap-4 mt-4 justify-center items-center">
-              <div className="text-3xl font-light italic">
-                «{member.citation}»
+                  <div className="flex flex-col gap-4 mt-4 justify-center items-center">
+                    <div className="text-3xl font-light italic">
+                      «{member.citation}»
+                    </div>
+                    <div className="text-2xl">
+                      <a href={member.twitter} target="_blank" rel="noreferrer">
+                        {member.name}
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="text-2xl">
-                <a href={member.twitter} target="_blank">
-                  {member.name}
-                </a>
-              </div>
-
-            </div>
-
-          </div>
-        </div>
-
-      </Card>
-      ))}
-    </Container>
-  </Paralax>
-  </>);
+            </Card>
+          ))}
+        </Container>
+      </Paralax>
+    </>
+  );
 }
 
 Index.defaultProps = {

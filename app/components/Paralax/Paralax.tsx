@@ -1,5 +1,6 @@
 import classnames from "classnames";
 import React from "react";
+import getImageUrl from "~/lib/getImageUrl";
 
 type Props = {
   img: string;
@@ -15,7 +16,10 @@ export const Paralax: React.FC<Props> = ({ img, className, children }) => {
 
   return (
     <>
-      <div className={classes} style={{ backgroundImage: `url('${img}')` }}>
+      <div
+        className={classes}
+        style={{ backgroundImage: `url('${getImageUrl(img)}')` }}
+      >
         {children}
       </div>
     </>
