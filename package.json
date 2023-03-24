@@ -22,6 +22,8 @@
     "cross-env": "^7.0.3",
     "isbot": "^3.6.5",
     "luxon": "^3.1.1",
+    "ramda": "^0.28.0",
+    "ramda-adjunct": "^3.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
@@ -30,6 +32,7 @@
   "devDependencies": {
     "@remix-run/dev": "^1.7.6",
     "@remix-run/eslint-config": "^1.7.6",
+    "@types/ramda": "^0.28.23",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "autoprefixer": "^10.4.13",
