@@ -1,0 +1,20 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import {Features as FeaturesComponent} from "~/components/features";
+import {Paralax} from "~/components/paralax";
+import SeparatorImage from "~/assets/bg-1.jpeg";
+---
+
+<Layout title="The DeadSafe">
+    <main>
+        <Paralax img={SeparatorImage.src}>
+            <div class="flex flex-col justify-center items-center gap-4 h-full group">
+                <div class=" z-30 flex flex-col gap-4 text-4xl bg-dark/40 p-4 group-hover:bg-dark/75 text-center w-full mt-16">
+                    <div>Run away these features.</div>
+                    <div>They will try to eat you.</div>
+                </div>
+            </div>
+        </Paralax>
+        <FeaturesComponent/>
+    </main>
+</Layout>

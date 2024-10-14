@@ -1,1 +1,0 @@
-export { MoneyFormat } from './MoneyFormat';
