@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^4.16.2
         version: 4.16.2(rollup@4.24.0)(typescript@5.6.3)
+      chroma-js:
+        specifier: ^3.1.2
+        version: 3.1.2
       classnames:
         specifier: ^2.5.1
         version: 2.5.1
@@ -850,6 +853,9 @@ packages:
   chokidar@4.0.1:
     resolution: {integrity: sha512-n8enUVCED/KVRQlab1hr3MVpcVMvxtZjmEa956u+4YijlmQED223XMSYj2tLuKvr4jcCTzNNMpQDUer72MMmzA==}
     engines: {node: '>= 14.16.0'}
+
+  chroma-js@3.1.2:
+    resolution: {integrity: sha512-IJnETTalXbsLx1eKEgx19d5L6SRM7cH4vINw/99p/M11HCuXGRWL+6YmCm7FWFGIo6dtWuQoQi1dc5yQ7ESIHg==}
 
   ci-info@4.0.0:
     resolution: {integrity: sha512-TdHqgGf9odd8SXNuxtUBVx8Nv+qZOejE6qyqiy5NtbYYQOeFa6zmHkxlPzmaLxWWHsU6nJmB7AETdVPi+2NBUg==}
@@ -3101,6 +3107,8 @@ snapshots:
   chokidar@4.0.1:
     dependencies:
       readdirp: 4.0.2
+
+  chroma-js@3.1.2: {}
 
   ci-info@4.0.0: {}
 

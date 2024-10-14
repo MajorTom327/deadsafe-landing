@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const chroma = require('chroma-js');
+import chroma from 'chroma-js';
 
 const colors = {
 	primary: "#17273b",
