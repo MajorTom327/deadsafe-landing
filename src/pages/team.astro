@@ -30,12 +30,12 @@ const teamMembers: TeamMember[] = [
 ];
 ---
 
-<Layout title="The DeadSafe">
+<Layout title="The DeadSafe - Our team">
     <main>
         <Paralax img={background.src} className="h-[95vh] ">
             <Container className="flex flex-col gap-4 py-12">
               {teamMembers.map((member: TeamMember) => (
-                      <Card key={member.name} className="bg-primary/80 rounded-2xl">
+                      <Card className="bg-primary/80 rounded-2xl">
                           <div class="grid md:grid-cols-2">
                               <div class="flex justify-center items-center">
                                   <img
@@ -50,7 +50,7 @@ const teamMembers: TeamMember[] = [
                                   </h1>
                                   <div class="flex flex-col gap-4">
                                     {member.description.map((line) => (
-                                            <p key="line" className="text-xl">
+                                            <p class="text-xl">
                                               {line}
                                             </p>
                                     ))}

@@ -47,7 +47,7 @@ export const Features: React.FC<Props> = ({}) => {
         <div className="flex flex-col gap-4 divide-y md:divide-none">
           <Title id="features">The Deadly Features</Title>
           <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-16">
-            {features.map((feature, index) => (
+            {features.map((feature) => (
               <Feature
                 key={feature.title + feature.description}
                 feature={feature}
